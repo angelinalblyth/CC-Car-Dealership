@@ -13,7 +13,7 @@ public class TestMotorbike {
     public void setUp() throws Exception {
         engine = new Engine("Pit bike", "Diesel");
         tyre = new Tyre("michelin");
-        motorbike = new Motorbike("Harley-Davidson" ,"Street Rod", "black and blue", 5000, 6495, 2018, 0, engine, tyre);
+        motorbike = new Motorbike("Harley-Davidson" ,"Street Rod", "black and blue", 5000, 6495, 2018, 0, engine, tyre, 500);
     }
 
     @Test

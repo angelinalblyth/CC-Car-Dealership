@@ -9,8 +9,9 @@ public class Vehicle {
     private int mileage;
     private Engine engine;
     private Tyre tyre;
+    private int rentalCost;
 
-    public Vehicle(String make, String model, String colour, int buyPrice,int sellPrice, int year, int mileage, Engine engine, Tyre tyre) {
+    public Vehicle(String make, String model, String colour, int buyPrice,int sellPrice, int year, int mileage, Engine engine, Tyre tyre, int rentalCost) {
         this.make = make;
         this.model = model;
         this.colour = colour;
@@ -20,6 +21,7 @@ public class Vehicle {
         this.mileage = mileage;
         this.engine = engine;
         this.tyre = tyre;
+        this.rentalCost = rentalCost;
     }
 
     public String getMake() {
@@ -56,5 +58,9 @@ public class Vehicle {
 
     public Tyre getTyre() {
         return tyre;
+    }
+
+    public int getRentalCost() {
+        return rentalCost;
     }
 }

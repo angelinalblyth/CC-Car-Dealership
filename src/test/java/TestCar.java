@@ -13,7 +13,7 @@ public class TestCar {
     public void setUp() throws Exception {
         engine = new Engine("VIVARO", "Diesel");
         tyre = new Tyre("michelin");
-        car = new Car("Vauxhall", "Corsa", "mustard", 1800, 2200, 2013, 51212, engine, tyre, 5);
+        car = new Car("Vauxhall", "Corsa", "mustard", 1800, 2200, 2013, 51212, engine, tyre, 300, 5);
     }
 
     @Test

@@ -12,11 +12,11 @@ public class TestCustomer {
 
     @Before
     public void setUp() throws Exception {
-        customer = new Customer("Adri", 100000);
+        customer = new Customer("Adri", 10000);
 
         engine = new Engine("Pit bike", "Diesel");
         tyre = new Tyre("michelin");
-        motorbike = new Motorbike("Harley-Davidson", "Street Rod", "black and blue", 5000, 6495, 2018, 0, engine, tyre);
+        motorbike = new Motorbike("Harley-Davidson", "Street Rod", "black and blue", 5000, 6495, 2018, 0, engine, tyre, 500);
     }
 
     @Test
@@ -26,7 +26,7 @@ public class TestCustomer {
 
     @Test
     public void getCustomerBudget() {
-        assertEquals(100000, customer.getBudget());
+        assertEquals(10000, customer.getBudget());
     }
 
     @Test
@@ -39,4 +39,11 @@ public class TestCustomer {
         customer.buy(motorbike);
         assertEquals(1, customer.getVehiclesBought());
     }
+
+    @Test
+    public void customerCanRentCar() {
+        customer.rental(motorbike);
+        assertEquals(1, customer.getVehiclesBought());
+        assertEquals(9500, customer.getBudget());
+            }
 }

@@ -1,4 +1,4 @@
-public class Tyre {
+public class Tyre implements IRepair {
 
     private String brand;
 
@@ -8,5 +8,9 @@ public class Tyre {
 
     public String getBrand() {
         return brand;
+    }
+
+    public String repair(Vehicle vehicle){
+        return "Inflated tyres on " + vehicle.getMake();
     }
 }

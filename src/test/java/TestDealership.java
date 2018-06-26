@@ -16,7 +16,7 @@ public class TestDealership {
 
         engine = new Engine("VIVARO", "Diesel");
         tyre = new Tyre("michelin");
-        car = new Car("Vauxhall", "Corsa", "mustard", 1800, 2200, 2013, 51212, engine, tyre, 5);
+        car = new Car("Vauxhall", "Corsa", "mustard", 1800, 2200, 2013, 51212, engine, tyre, 300, 5);
     }
 
     @Test
@@ -43,5 +43,15 @@ public class TestDealership {
         dealership.sell(car);
         assertEquals(0,dealership.getVehiclesSize());
         assertEquals(10400, dealership.getTill());
+    }
+
+    @Test
+    public void canOilgetReplaced() {
+        assertEquals("Changed oil on Vauxhall", engine.repair(car));
+    }
+
+    @Test
+    public void canTyresBeInflated() {
+        assertEquals("Inflated tyres on Vauxhall", tyre.repair(car));
     }
 }

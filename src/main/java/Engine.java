@@ -1,4 +1,4 @@
-public class Engine {
+public class Engine implements IRepair{
 
     private String make;
     private String fuelType;
@@ -14,5 +14,9 @@ public class Engine {
 
     public String getFuelType() {
         return fuelType;
+    }
+
+    public String repair(Vehicle vehicle){
+        return "Changed oil on " + vehicle.getMake();
     }
 }

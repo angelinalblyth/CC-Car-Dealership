@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Customer implements IBuy, ISell{
+public class Customer implements IBuy, ISell, IRental{
 
     private String name;
     private int budget;
@@ -36,4 +36,12 @@ public class Customer implements IBuy, ISell{
             budget += vehicle.getBuyPrice();
         }
     }
+
+    public void rental(Vehicle vehicle){
+        if(vehicle.getRentalCost() <= budget){
+            customerVehicles.add(vehicle);
+            budget -= vehicle.getRentalCost();
+        }
+    }
+
 }
