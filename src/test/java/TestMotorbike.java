@@ -13,7 +13,7 @@ public class TestMotorbike {
     public void setUp() throws Exception {
         engine = new Engine("Pit bike", "Diesel");
         tyre = new Tyre("michelin");
-        motorbike = new Motorbike("Harley-Davidson" ,"Street Rod", "black and blue", 6495, 2018, 0, engine, tyre);
+        motorbike = new Motorbike("Harley-Davidson" ,"Street Rod", "black and blue", 5000, 6495, 2018, 0, engine, tyre);
     }
 
     @Test
@@ -32,8 +32,14 @@ public class TestMotorbike {
     }
 
     @Test
-    public void getPrice() {
-        assertEquals(6495, motorbike.getPrice());
+    public void getBuyPrice() {
+        assertEquals(5000, motorbike.getBuyPrice());
+    }
+
+    @Test
+    public void getSellPrice() {
+
+        assertEquals(6495, motorbike.getSellPrice());
     }
 
     @Test

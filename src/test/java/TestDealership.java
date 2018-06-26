@@ -6,10 +6,17 @@ import static org.junit.Assert.assertEquals;
 public class TestDealership {
 
     Dealership dealership;
+    Car car;
+    Tyre tyre;
+    Engine engine;
 
     @Before
     public void setUp() throws Exception {
         dealership = new Dealership("Code Clan Used Car Dealership");
+
+        engine = new Engine("VIVARO", "Diesel");
+        tyre = new Tyre("michelin");
+        car = new Car("Vauxhall", "Corsa", "mustard", 1800, 2200, 2013, 51212, engine, tyre, 5);
     }
 
     @Test
@@ -19,6 +26,22 @@ public class TestDealership {
 
     @Test
     public void getAmountInTill() {
-        assertEquals(0, dealership.getTill());
+        assertEquals(10000, dealership.getTill());
+    }
+
+
+    @Test
+    public void canBuyCar() {
+        dealership.buy(car);
+        assertEquals(1, dealership.getVehiclesSize());
+        assertEquals(8200, dealership.getTill());
+    }
+
+    @Test
+    public void canSellCar(){
+        dealership.buy(car);
+        dealership.sell(car);
+        assertEquals(0,dealership.getVehiclesSize());
+        assertEquals(10400, dealership.getTill());
     }
 }

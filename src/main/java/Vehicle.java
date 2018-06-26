@@ -3,17 +3,19 @@ public class Vehicle {
     private String make;
     private String model;
     private String colour;
-    private int price;
+    private int buyPrice;
+    private int sellPrice;
     private int year;
     private int mileage;
     private Engine engine;
     private Tyre tyre;
 
-    public Vehicle(String make, String model, String colour, int price, int year, int mileage, Engine engine, Tyre tyre) {
+    public Vehicle(String make, String model, String colour, int buyPrice,int sellPrice, int year, int mileage, Engine engine, Tyre tyre) {
         this.make = make;
         this.model = model;
         this.colour = colour;
-        this.price = price;
+        this.buyPrice = buyPrice;
+        this.sellPrice = sellPrice;
         this.year = year;
         this.mileage = mileage;
         this.engine = engine;
@@ -32,8 +34,12 @@ public class Vehicle {
         return colour;
     }
 
-    public int getPrice() {
-        return price;
+    public int getBuyPrice() {
+        return buyPrice;
+    }
+
+    public int getSellPrice() {
+        return sellPrice;
     }
 
     public int getYear() {
